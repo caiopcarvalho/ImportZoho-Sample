@@ -1,0 +1,22 @@
+{
+  "name": "importzoho-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiopcarvalho/ImportZoho-Sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caiopcarvalho/ImportZoho-Sample/issues"
+  },
+  "homepage": "https://github.com/caiopcarvalho/ImportZoho-Sample#readme",
+  "dependencies": {
+    "importzoho": "^1.1.15"
+  }
+}

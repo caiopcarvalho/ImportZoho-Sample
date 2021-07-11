@@ -51,8 +51,42 @@ const searchRecord = async ()=>{
     }
 }
 
-//searchRecord()
+const updateRecord = async ()=>{
+    // não consegui ver o retorno
+    let records = await ImportZoho.updateRecords("ImportacaoTeste",[{"id":"116652000058774210","Name": "Exempl233"}],()=>{})
+}
 
+const updateRecordCallback = async ()=>{
+    let records = null
+    await ImportZoho.upsertRecords("ImportacaoTeste",[{"id":"116652000058774210","Name": "Exempl233"}],(error,response)=>{
+        console.log(response[0])
+    }, { trigger: ["workflow"] })
+}
+
+const insertRecord = async ()=>{
+    try{
+    let record = await ImportZoho.insertRecords("ImportacaoTeste",[{"Name": "ChamadaABC"}],()=>{})
+    console.log(record[0].response.success)
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+
+const upsertRecord = async ()=>{
+    try{
+    let record = await ImportZoho.upsertRecords("ImportacaoTeste",[{"Name": "Teste1 abc","Message":"Chamada ABC"}],["Name"],()=>{},{ trigger: ["workflow"] })
+    console.log({record})
+    }
+    catch(e){
+     console.log(e)
+    }
+}
+//upsertRecord();
+//insertRecord()
+//updateRecordCallback()
+//updateRecord()
+//searchRecord()
 //getRecordModifiedSince()
 //getRecords
 //getRecordById()

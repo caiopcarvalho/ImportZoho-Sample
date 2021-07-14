@@ -53,7 +53,8 @@ const searchRecord = async ()=>{
 
 const updateRecord = async ()=>{
     // não consegui ver o retorno
-    let records = await ImportZoho.updateRecords("ImportacaoTeste",[{"id":"116652000058774210","Name": "Exempl233"}],()=>{})
+    let records = await ImportZoho.updateRecords("ImportacaoTeste",[{"id":"116652000058774210","Name": "Exemplol233"}],()=>{})
+    console.log(records)
 }
 
 const updateRecordCallback = async ()=>{
@@ -61,6 +62,7 @@ const updateRecordCallback = async ()=>{
     await ImportZoho.upsertRecords("ImportacaoTeste",[{"id":"116652000058774210","Name": "Exempl233"}],(error,response)=>{
         console.log(response[0])
     }, { trigger: ["workflow"] })
+
 }
 
 const insertRecord = async ()=>{
@@ -82,6 +84,30 @@ const upsertRecord = async ()=>{
      console.log(e)
     }
 }
+
+const teste = (a,b,c)=>{
+    return new Promise ((resolve,reject)=>{
+        c(a+b)
+        c(a+b)
+        resolve(a+b)
+        resolve(a+b+1)
+    })
+
+}
+
+const teste2 = (a)=>{
+    console.log(a)
+}
+
+function teste3(a){
+    console.log(a)
+}
+
+ teste(1,2,(a)=>{
+    console.log(a)
+}).then((a)=>{
+    console.log(a)
+})
 //upsertRecord();
 //insertRecord()
 //updateRecordCallback()
